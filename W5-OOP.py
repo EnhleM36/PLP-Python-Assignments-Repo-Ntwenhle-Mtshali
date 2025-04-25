@@ -1,3 +1,4 @@
+##Activity 1
 class Book:
     def __init__(self, title, author, genre, pages):
         self.title = title
@@ -33,3 +34,38 @@ BookC = Ebook("The Alchemist", "Paulo Coelho", "Adventure", 200, 1.5)
 
 print(BookA.description())
 print(BookA.read())
+
+
+##Activity 2
+# Base class
+class Vehicle:
+    def move(self):
+        raise NotImplementedError("Subclasses must implement this method.")
+
+# Subclass for Car
+class Car(Vehicle):
+    def move(self):
+        print("Driving 🚗")
+
+# Subclass for Plane
+class Plane(Vehicle):
+    def move(self):
+        print("Flying ✈️")
+
+# Subclass for Boat
+class Boat(Vehicle):
+    def move(self):
+        print("Sailing 🚢")
+
+# Function to demonstrate polymorphism
+def travel(vehicle):
+    vehicle.move()
+
+# Example usage
+car = Car()
+plane = Plane()
+boat = Boat()
+
+travel(car)    # Outputs: Driving 🚗
+travel(plane)  # Outputs: Flying ✈️
+travel(boat)   # Outputs: Sailing 🚢
