@@ -1,39 +1,50 @@
 ##Activity 1
-class Book:
-    def __init__(self, title, author, genre, pages):
-        self.title = title
-        self.author = author
-        self.genre = genre
-        self.pages = pages
-
-    def description(self):
-        return f"'{self.title}' by {self.author}, Genre: {self.genre}, Pages: {self.pages}"
+class Witch:
+    def __init__(self, name, age, location):
+        self.name = name
+        self.age = age
+        self.location = location
     
-    def read(self):
-        return f"You are reading '{self.title}', it is a {self.genre} bookcler."
+    def description(self):
+        print(f"{self.name} is a {self.age} year old witch🧙 from {self.location}.")
 
-class PaperBack(Book):
-    def __init__(self, title, author, genre, pages, cover_type):
-        super().__init__(title, author, genre, pages)
-        self.cover_type = cover_type
+class Travel(Witch):
+    def __init__(self, name, age, location, transport):
+        super().__init__(name, age, location)
+        self.transport = transport
+    def travel(self):
+        print(f"{self.name}  travels by {self.transport}.")  
 
-    def read(self):
-        return f"You are flipping through the {self.cover_type} cover pages of '{self._title}'."
+class Type(Witch):
+    def __init__(self, name, age, location, type_of_witch):
+        super().__init__(name, age, location)
+        self.type_of_witch = type_of_witch
+    def type(self):
+        print(f"{self.name} is a {self.type_of_witch} witch.")
 
-class Ebook(Book):
-    def __init__(self, title, author, genre, pages, file_size):
-        super().__init__(title, author, genre, pages)
-        self.file_size = file_size
+class Magic(Witch):
+    def __init__(self, name, age, location, magic_type):
+        super().__init__(name, age, location)
+        self.magic_type = magic_type
+    def magic(self):
+        print(f"{self.name} is a {self.magic_type} witch.") 
 
-    def read(self):
-        return f"You are reading the eBook '{self.title}' on your device. File size: {self.file_size} MB."
 
-BookA = Book("Twilight", "Stepahnie Meyer", "Fantasy", 180)
-BookB = PaperBack("Harry Potter", "J.K. Rowling", "Fantasy", 300, "soft")
-BookC = Ebook("The Alchemist", "Paulo Coelho", "Adventure", 200, 1.5)
 
-print(BookA.description())
-print(BookA.read())
+travel_witch = Travel("Morgana", 150, "Enchanted Forest", "broomstick")
+type_of_witch = Type("Selene", 200, "Moonlight Valley", "Earth")
+magic_type = Magic("Ravenna", 300, "Shadow Peaks", "dark magic")
+
+# Calling methods to see the output
+travel_witch.description()
+travel_witch.travel()
+
+type_of_witch.description()
+type_of_witch.type()
+
+magic_type.description()
+magic_type.magic()
+
 
 
 ##Activity 2
