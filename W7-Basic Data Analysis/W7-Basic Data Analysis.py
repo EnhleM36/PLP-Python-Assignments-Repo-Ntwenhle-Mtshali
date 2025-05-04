@@ -14,6 +14,10 @@ print(df.isnull().sum())
 
 print(df.columns)
 
+print(df.shape)
+
+print(df.info())
+
 result1 = df.groupby('Species')['SepalLengthCm'].agg(['mean'])
 
 result2 = df.groupby('Species')['SepalWidthCm'].agg(['mean'])
